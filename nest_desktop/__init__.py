@@ -1,10 +1,3 @@
-# https://www.python.org/dev/peps/pep-0440
+"A web-based GUI application for spiking neuronal networks"
 
-from importlib import metadata  # noqa
-
-try:
-    __version__ = metadata.version("nest-desktop")
-except metadata.PackageNotFoundError:
-    pass
-
-del metadata
+__version__ = "4.1.0"
