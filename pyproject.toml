@@ -1,11 +1,12 @@
 [build-system]
-requires = ["setuptools >= 77.0.3"]
-build-backend = "setuptools.build_meta"
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
 
 [project]
 name = "nest-desktop"
-version = "4.1.0"
-description = "A web-based GUI application for spiking neuronal networks"
+#version = "4.1.0"
+#description = "A web-based GUI application for spiking neuronal networks"
+dynamic = ["version", "description"]   # taken from __init__.py
 readme = "README.md"
 requires-python = ">=3.9"
 license-files = ["LICENSE"]
@@ -48,6 +49,6 @@ homepage = "https://nest-desktop.github.io"
 repository = "https://github.com/nest-desktop/nest-desktop"
 documentation = "https://nest-desktop.readthedocs.io"
 
-[tool.setuptools]
+[project.script-files]
 package-dir = {"nest_desktop" = "nest_desktop"}
 script-files = ["scripts/nest-desktop"]
