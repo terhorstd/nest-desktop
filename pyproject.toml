@@ -42,6 +42,32 @@ classifiers = [
 ]
 dependencies = [
   "rich-click",
+  "psutil",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "bump2version",
+    "flake8",
+    "mypy",
+    "pre-commit",
+    "pydocstyle",
+    "pylint",
+    "pytest",
+    "pytest-black",
+    "pytest-cov",
+    "pytest-flake8",
+    "pytest-mypy",
+    "pytest-pydocstyle",
+    "pytest-pylint",
+    "pytest-xdist",
+]
+doc = [
+    "sphinx",
+    "sphinx-autodoc-typehints",
+    "pygments",
+    "recommonmark",
 ]
 
 [project.urls]
@@ -50,8 +76,22 @@ repository = "https://github.com/nest-desktop/nest-desktop"
 documentation = "https://nest-desktop.readthedocs.io"
 
 [project.scripts]
-nest-desktop = "nest_desktop.app:run"
+nest-desktop = "nest_desktop.app:cli"
 
 [project.script-files]
 package-dir = {"nest_desktop" = "nest_desktop"}
 script-files = ["scripts/nest-desktop"]
+
+[tool.black]
+line-length = 120
+
+[tool.flake8]
+# This is ignored
+# see discussions around https://github.com/PyCQA/flake8/issues/234
+
+[tool.isort]
+atomic = true
+line_length = 120
+multi_line_output = 3
+profile = "black"
+skip_gitignore = true
